@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delola Journey — Online Yoga with Del</title>
+<meta name="description" content="Vinyasa, Strength, Mobility, Ashtanga, Yin, and Pose Workshops — live over Zoom or on your own time via YouTube. Beginner-friendly, taught by Del.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bone: #F7F5F0;
+    --ink: #2B2E28;
+    --sage: #8A9A7E;
+    --sage-deep: #6C7C61;
+    --clay: #C77B58;
+    --sand: #E8E2D4;
+    --sand-line: #D8D0BC;
+
+    --display: 'Fraunces', serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --max-w: 1120px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bone);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--clay);
+    outline-offset: 3px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(247, 245, 240, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--sand-line);
+  }
+
+  .nav-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .wordmark img {
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .wordmark-text {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+  }
+
+  .wordmark-text span {
+    display: block;
+    color: var(--sage-deep);
+    font-family: var(--body);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  nav.links { display: flex; gap: 32px; }
+
+  nav.links a {
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--ink);
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+  }
+
+  nav.links a:hover { opacity: 1; }
+
+  .nav-cta {
+    background: var(--ink);
+    color: var(--bone) !important;
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 0.88rem !important;
+    opacity: 1 !important;
+  }
+
+  .menu-toggle { display: none; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    padding: 88px 0 110px;
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 28px;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 22px;
+    height: 1px;
+    background: var(--sage-deep);
+  }
+
+  h1.hero-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 24px;
+  }
+
+  h1.hero-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--sage-deep);
+  }
+
+  .hero-sub {
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: #4A4E44;
+    max-width: 480px;
+    margin: 0 0 36px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border-radius: 100px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .btn:hover { transform: translateY(-1px); }
+
+  .btn-primary {
+    background: var(--clay);
+    color: var(--bone);
+  }
+
+  .btn-primary:hover { background: #B76A48; }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .btn-ghost:hover { background: var(--ink); color: var(--bone); }
+
+  /* breath visual */
+  .breath-visual {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .breath-visual svg { width: 100%; height: 100%; }
+
+  .breath-ring {
+    fill: none;
+    stroke: var(--sage);
+    stroke-width: 1;
+    opacity: 0.55;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: breathe 6.5s ease-in-out infinite;
+  }
+
+  .breath-ring.r2 { stroke: var(--clay); opacity: 0.35; animation-delay: -1.6s; }
+  .breath-ring.r3 { stroke: var(--sage-deep); opacity: 0.25; animation-delay: -3.2s; }
+
+  .breath-dot {
+    fill: var(--clay);
+    animation: breathe 6.5s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  .breath-label {
+    font-family: var(--body);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    fill: var(--sage-deep);
+    text-transform: uppercase;
+  }
+
+  @keyframes breathe {
+    0%, 100% { transform: scale(0.86); }
+    50% { transform: scale(1.06); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .breath-ring, .breath-dot { animation: none; }
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section { padding: 96px 0; }
+
+  .section-head {
+    max-width: 620px;
+    margin: 0 0 56px;
+  }
+
+  .section-eyebrow {
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    font-weight: 600;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  h2.section-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+    line-height: 1.15;
+    margin: 0 0 16px;
+  }
+
+  .section-desc {
+    color: #4A4E44;
+    font-size: 1.02rem;
+    line-height: 1.65;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about {
+    background: var(--sand);
+    border-top: 1px solid var(--sand-line);
+    border-bottom: 1px solid var(--sand-line);
+  }
+
+  .about .wrap {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .about-portrait {
+    aspect-ratio: 4 / 5;
+    border-radius: 6px;
+    background: linear-gradient(160deg, #D9D2BE 0%, #C9C0A6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b6552;
+    font-family: var(--body);
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-portrait span {
+    position: relative;
+    z-index: 1;
+    line-height: 1.5;
+  }
+
+  .about-copy h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.9rem, 3vw, 2.5rem);
+    margin: 0 0 20px;
+  }
+
+  .about-copy p {
+    color: #4A4E44;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin: 0 0 16px;
+  }
+
+  .about-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .tag {
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 7px 15px;
+    border-radius: 100px;
+    background: var(--bone);
+    border: 1px solid var(--sand-line);
+    color: var(--sage-deep);
+  }
+
+  /* ---------- CLASSES ---------- */
+  .classes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .class-card {
+    background: var(--bone);
+    border: 1px solid var(--sand-line);
+    border-radius: 8px;
+    padding: 28px 26px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .class-card:hover {
+    border-color: var(--sage);
+    transform: translateY(-3px);
+  }
+
+  .class-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--sand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  .class-mark svg { width: 18px; height: 18px; stroke: var(--sage-deep); }
+
+  .class-card h3 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0 0 8px;
+  }
+
+  .class-card p {
+    color: #4A4E44;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin: 0 0 16px;
+  }
+
+  .class-level {
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--clay);
+  }
+
+  /* ---------- SCHEDULE ---------- */
+  .schedule {
+    background: var(--ink);
+    color: var(--bone);
+  }
+
+  .schedule .section-eyebrow { color: var(--sage); }
+  .schedule .section-desc { color: #C7CABF; }
+  .schedule h2.section-title { color: var(--bone); }
+
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+  }
+
+  .schedule-table th {
+    text-align: left;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #9CA394;
+    font-weight: 600;
+    padding: 0 0 16px;
+    border-bottom: 1px solid #454940;
+  }
+
+  .schedule-table td {
+    padding: 20px 0;
+    border-bottom: 1px solid #3A3D35;
+    font-size: 0.98rem;
+    vertical-align: middle;
+  }
+
+  .schedule-table tr:last-child td { border-bottom: none; }
+
+  .sched-day {
+    font-family: var(--display);
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+
+  .sched-class {
+    color: var(--sage);
+    font-weight: 500;
+  }
+
+  .sched-time { color: #C7CABF; }
+
+  .zoom-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #B7BFAC;
+  }
+
+  .zoom-pill::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--sage);
+  }
+
+  .schedule-note {
+    margin-top: 32px;
+    font-size: 0.9rem;
+    color: #9CA394;
+  }
+
+  /* ---------- RECORDINGS ---------- */
+  .recordings .wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .recordings-copy .section-eyebrow { margin-bottom: 14px; }
+
+  .recordings-copy h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.9rem, 3vw, 2.5rem);
+    margin: 0 0 18px;
+  }
+
+  .recordings-copy p {
+    color: #4A4E44;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin: 0 0 28px;
+  }
+
+  .recordings-visual {
+    aspect-ratio: 16 / 10;
+    border-radius: 8px;
+    background: var(--ink);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .play-btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--clay);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .play-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--bone);
+    margin-left: 3px;
+  }
+
+  .recordings-visual .rec-label {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    color: #B7BFAC;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- HOW TO JOIN ---------- */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    counter-reset: step;
+  }
+
+  .step {
+    position: relative;
+    padding-top: 8px;
+  }
+
+  .step-num {
+    font-family: var(--display);
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--sand-line);
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+
+  .step h3 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0 0 10px;
+  }
+
+  .step p {
+    color: #4A4E44;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ---------- CONTACT / CTA ---------- */
+  .cta {
+    background: var(--sand);
+    border-top: 1px solid var(--sand-line);
+  }
+
+  .cta-inner {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .cta h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    margin: 0 0 18px;
+  }
+
+  .cta p {
+    color: #4A4E44;
+    font-size: 1.05rem;
+    margin: 0 0 34px;
+  }
+
+  .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  .contact-row {
+    margin-top: 40px;
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 0.92rem;
+  }
+
+  .contact-row a {
+    text-decoration: none;
+    color: var(--sage-deep);
+    font-weight: 500;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--sand-line);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.85rem;
+    color: #7A7E70;
+  }
+
+  .footer-inner a {
+    text-decoration: none;
+    color: #7A7E70;
+  }
+
+  .footer-links { display: flex; gap: 22px; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 860px) {
+    nav.links { display: none; }
+
+    .hero-inner { grid-template-columns: 1fr; }
+    .breath-visual { max-width: 280px; margin: 0 auto; order: -1; }
+
+    .about .wrap { grid-template-columns: 1fr; }
+    .about-portrait { max-width: 320px; margin: 0 auto; }
+
+    .classes-grid { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr; gap: 32px; }
+
+    .recordings .wrap { grid-template-columns: 1fr; }
+    .recordings-visual { order: -1; }
+
+    .schedule-table { font-size: 0.9rem; }
+    .sched-time, .zoom-pill { display: block; margin-top: 4px; }
+  }
+
+  @media (max-width: 560px) {
+    section { padding: 64px 0; }
+    .hero { padding: 56px 0 72px; }
+    .nav-inner { padding: 16px 20px; }
+    .classes-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="wordmark">
+      <img src="assets/logo.png" alt="Delola Yoga logo">
+      <span class="wordmark-text">Delola Journey<span>Online Studio</span></span>
+    </a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#classes">Classes</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#join">Join</a>
+    </nav>
+    <a href="#join" class="nav-cta btn">Reserve a spot</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Online studio · Live on Zoom</span>
+        <h1 class="hero-title">Move with breath.<br>Practice with <em>Del</em>.</h1>
+        <p class="hero-sub">Restorative and vinyasa asana, taught with an eye for how your body actually moves. Join live on Zoom, or practice anytime with recordings on YouTube.</p>
+        <div class="hero-actions">
+          <a href="#join" class="btn btn-primary">Reserve your spot</a>
+          <a href="#schedule" class="btn btn-ghost">View schedule</a>
+        </div>
+      </div>
+
+      <div class="breath-visual" aria-hidden="true">
+        <svg viewBox="0 0 300 300">
+          <circle class="breath-ring r3" cx="150" cy="150" r="120" />
+          <circle class="breath-ring r2" cx="150" cy="150" r="95" />
+          <circle class="breath-ring" cx="150" cy="150" r="70" />
+          <circle class="breath-dot" cx="150" cy="150" r="5" />
+          <text class="breath-label" x="150" y="270" text-anchor="middle">inhale — exhale</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-portrait">
+        <span>[ Photo of Del<br>to go here ]</span>
+      </div>
+      <div class="about-copy">
+        <span class="section-eyebrow">Meet your teacher</span>
+        <h2>Hi, I'm Del.</h2>
+        <p>I teach a range of asana practices — from the steady discipline of Ashtanga to the deep stillness of Yin, dynamic Vinyasa, and strength and mobility work built to carry off the mat and into daily life.</p>
+        <p>Every class is beginner-friendly without being basic — clear cues, real modifications, and a pace that respects your breath over your ego.</p>
+        <div class="about-tags">
+          <span class="tag">Vinyasa</span>
+          <span class="tag">Strength</span>
+          <span class="tag">Mobility</span>
+          <span class="tag">Ashtanga</span>
+          <span class="tag">Yin</span>
+          <span class="tag">Pose Workshops</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASSES -->
+  <section id="classes">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">What we practice</span>
+        <h2 class="section-title">Six ways to move this week</h2>
+        <p class="section-desc">Each class stands on its own — drop into whichever style fits how your body feels today, live on Zoom or on your own time via YouTube.</p>
+      </div>
+
+      <div class="classes-grid">
+        <div class="class-card">
+          <div class="class-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M4 12h4l2-8 4 16 2-8h4"/></svg>
+          </div>
+          <h3>Vinyasa</h3>
+          <p>Breath-linked movement that builds heat and flow. A dynamic sequence that still leaves room to modify.</p>
+          <span class="class-level">Beginner friendly</span>
+        </div>
+
+        <div class="class-card">
+          <div class="class-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M12 4v16M6 8l6-4 6 4M4 14l8 6 8-6"/></svg>
+          </div>
+          <h3>Strength</h3>
+          <p>Bodyweight and asana-based strength work, building stability and power from the ground up.</p>
+          <span class="class-level">All levels</span>
+        </div>
+
+        <div class="class-card">
+          <div class="class-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          </div>
+          <h3>Mobility</h3>
+          <p>Joint-focused movement to build range and ease, so strength and flexibility work together.</p>
+          <span class="class-level">All levels</span>
+        </div>
+
+        <div class="class-card">
+          <div class="class-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg>
+          </div>
+          <h3>Ashtanga</h3>
+          <p>A traditional, structured sequence practiced with consistent order — steady, disciplined, and grounding.</p>
+          <span class="class-level">Some experience helpful</span>
+        </div>
+
+        <div class="class-card">
+          <div class="class-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M12 21c-4-3-8-6.5-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 4.5-4 8-8 11z"/></svg>
+          </div>
+          <h3>Yin</h3>
+          <p>Long-held, passive postures that target connective tissue and invite deep stillness.</p>
+          <span class="class-level">All levels</span>
+        </div>
+
+        <div class="class-card">
+          <div class="class-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3>Pose Workshops</h3>
+          <p>A deep dive into one posture or peak pose at a time — alignment, drills, and how to build toward it.</p>
+          <span class="class-level">All levels</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="schedule" id="schedule">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Weekly schedule</span>
+        <h2 class="section-title">Find your class time</h2>
+        <p class="section-desc">All classes are held live over Zoom. The link is sent after you reserve your spot.</p>
+      </div>
+
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Class</th>
+            <th>Time</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="sched-day">Monday</td>
+            <td class="sched-class">Vinyasa</td>
+            <td class="sched-time">8:00 – 9:00 AM</td>
+            <td><span class="zoom-pill">Live on Zoom</span></td>
+          </tr>
+          <tr>
+            <td class="sched-day">Tuesday</td>
+            <td class="sched-class">Strength</td>
+            <td class="sched-time">6:00 – 7:00 PM</td>
+            <td><span class="zoom-pill">Live on Zoom</span></td>
+          </tr>
+          <tr>
+            <td class="sched-day">Wednesday</td>
+            <td class="sched-class">Yin</td>
+            <td class="sched-time">6:30 – 7:30 PM</td>
+            <td><span class="zoom-pill">Live on Zoom</span></td>
+          </tr>
+          <tr>
+            <td class="sched-day">Thursday</td>
+            <td class="sched-class">Mobility</td>
+            <td class="sched-time">8:00 – 9:00 AM</td>
+            <td><span class="zoom-pill">Live on Zoom</span></td>
+          </tr>
+          <tr>
+            <td class="sched-day">Friday</td>
+            <td class="sched-class">Ashtanga</td>
+            <td class="sched-time">8:00 – 9:00 AM</td>
+            <td><span class="zoom-pill">Live on Zoom</span></td>
+          </tr>
+          <tr>
+            <td class="sched-day">Sunday</td>
+            <td class="sched-class">Pose Workshop</td>
+            <td class="sched-time">4:00 – 5:00 PM</td>
+            <td><span class="zoom-pill">Live on Zoom</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="schedule-note">Placeholder schedule — swap in Del's real class times. Times shown in Pacific.</p>
+    </div>
+  </section>
+
+  <!-- RECORDINGS -->
+  <section class="recordings">
+    <div class="wrap">
+      <div class="recordings-copy">
+        <span class="section-eyebrow">Can't make it live?</span>
+        <h2>Practice on your own time</h2>
+        <p>Every class is recorded and posted to Del's YouTube channel, so you can flow through a full session whenever it fits your week — no Zoom link required.</p>
+        <a href="#" class="btn btn-ghost">Watch on YouTube</a>
+      </div>
+      <div class="recordings-visual">
+        <div class="play-btn" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span class="rec-label">Full class recordings, added weekly</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO JOIN -->
+  <section id="join">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Getting started</span>
+        <h2 class="section-title">Practice live, or on your own time</h2>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Reserve your spot</h3>
+          <p>Send Del a message with the class and day you'd like to join live.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Get your Zoom link</h3>
+          <p>You'll receive the class link by email ahead of time — save it, it's the same link each week.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Or watch anytime</h3>
+          <p>Prefer to flow on your own schedule? Every class is posted to YouTube after it airs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACT -->
+  <section class="cta">
+    <div class="wrap cta-inner">
+      <h2>Ready to practice together?</h2>
+      <p>Reach out to reserve your spot or ask a question — Del's happy to help you find the right class to start with.</p>
+      <div class="cta-actions">
+        <a href="mailto:hello@delolajourney.com" class="btn btn-primary">Email Del</a>
+        <a href="#" class="btn btn-ghost">Message on Instagram</a>
+      </div>
+      <div class="contact-row">
+        <a href="mailto:hello@delolajourney.com">hello@delolajourney.com</a>
+        <a href="#">@delolajourney</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Delola Journey. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#classes">Classes</a>
+      <a href="#schedule">Schedule</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
