@@ -69,7 +69,7 @@
   .nav-inner {
     max-width: var(--max-w);
     margin: 0 auto;
-    padding: 12px 28px;
+    padding: 2px 28px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -84,10 +84,9 @@
   }
 
   .wordmark img {
-    height: 64px;
-    width: 64px;
-    border-radius: 50%;
-    object-fit: cover;
+    height: 180px;
+    width: auto;
+    object-fit: contain;
   }
 
   .wordmark-text {
@@ -689,7 +688,8 @@
   @media (max-width: 560px) {
     section { padding: 64px 0; }
     .hero { padding: 56px 0 72px; }
-    .nav-inner { padding: 10px 20px; }
+    .nav-inner { padding: 6px 20px; }
+    .wordmark img { height: 120px; width: auto; }
     .classes-grid { grid-template-columns: 1fr; }
   }
 </style>
